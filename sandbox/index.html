@@ -9,21 +9,26 @@
 
     <meta http-equiv="content-script-type" content="text/javascript">
     <meta http-equiv="content-style-type" content="text/css">
+    <script type="text/javascript" src="../src/JohnnyDepp.js"></script>
     <script type="text/javascript" src="../src/EventDispatcher.js"></script>
     <script type="text/javascript" src="../src/Timer.js"></script>
     <script type="text/javascript">
-      var timer = new Timer(1000, 3);
-      timer.addEventListener("timer", this, function() {
-        console.log("hello");
-      });
-      timer.addEventListener("complete", this, function() {
-        console.log("done");
-      });
-      timer.start();
+      window.onload = function() {
+        var timer = new Timer(1000, 3);
+        timer.addEventListener("timer", this, function() {
+          document.getElementById("out").innerHTML += "<p>hello</p>";
+        });
+        timer.addEventListener("complete", this, function() {
+          document.getElementById("out").innerHTML += "<p>done</p>";
+        });
+        timer.start();
+      };
     </script>
 
 
   </head>
   <body>
+    <h1>Timer.js</h1>
+    <div id="out"></div>
   </body>
 </html>

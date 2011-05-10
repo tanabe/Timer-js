@@ -1,3 +1,18 @@
+//yes. this is experiment.
+//using JohnnyDepp interface
+if (window.JD) {
+  JD.require(
+    "EventDispatcher.js",
+    function() {
+      try {
+        Timer.onInit();
+      } catch (e) {
+
+      }
+    }
+  )("Timer.js");
+}
+
 /**
  * Timer Class
  * extends EventDispatcher
